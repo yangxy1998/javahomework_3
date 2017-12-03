@@ -1,23 +1,9 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.*;
-
 import com.github.davidmoten.guavamini.Lists;
-import com.kennycason.kumo.CollisionMode;
-import com.kennycason.kumo.WordCloud;
-import com.kennycason.kumo.WordFrequency;
-import com.kennycason.kumo.bg.CircleBackground;
-import com.kennycason.kumo.bg.RectangleBackground;
-import com.kennycason.kumo.font.FontWeight;
-import com.kennycason.kumo.font.KumoFont;
-import com.kennycason.kumo.font.scale.LinearFontScalar;
-import com.kennycason.kumo.font.scale.SqrtFontScalar;
-import com.kennycason.kumo.image.AngleGenerator;
-import com.kennycason.kumo.nlp.FrequencyAnalyzer;
-import com.kennycason.kumo.nlp.tokenizers.ChineseWordTokenizer;
-import com.kennycason.kumo.palette.ColorPalette;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
+import java.util.List;
 
 public class Main {
 
@@ -33,10 +19,12 @@ public class Main {
                     (new Double(Math.random() * 128)).intValue() + 128,
                     (new Double(Math.random() * 128)).intValue() + 128);
         }
-
+        UserFrame userFrame=new UserFrame();
+        userFrame.setSize(720,300);
+        userFrame.setVisible(true);
+        userFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         WordCloudBuilder.buildWordCouldByWords(200,200,4,20,10,s,new Color(-1),"data.png",colors);
     }
-
 }
 
 
